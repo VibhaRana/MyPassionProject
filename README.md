@@ -1,5 +1,5 @@
 # MyPassionProject
-I am making this "OurApp" project which is of my personal intrest.
+I am making this "OurApp" project which is of my personal interest.
 <hr>
 <h3>Technologies Used </h3>
 <ul>
