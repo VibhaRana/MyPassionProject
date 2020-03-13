@@ -13,7 +13,7 @@ User.prototype.cleanUp = function() {
   if (typeof(this.data.email) != "string") {this.data.email = ""}
   if (typeof(this.data.password) != "string") {this.data.password = ""}
 
-  // get rid of any bogus properties
+  // get rid of any bogus properties, this way we are updating data property
   this.data = {
     username: this.data.username.trim().toLowerCase(),
     email: this.data.email.trim().toLowerCase(),
