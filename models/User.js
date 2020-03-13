@@ -2,11 +2,13 @@ const usersCollection = require('../db').collection("users")
 const validator = require("validator")
 
 let User = function(data) {
-  this.data = data
+  this.data = data //storing user data
   this.errors = []
 }
-
+//using protype syntax, javascript will not need to create a copyof this function, once for each object
+//instead any object created from let User = function(){}constructor function will have access to this method
 User.prototype.cleanUp = function() {
+  //if the username is not the type of string, then empty it.
   if (typeof(this.data.username) != "string") {this.data.username = ""}
   if (typeof(this.data.email) != "string") {this.data.email = ""}
   if (typeof(this.data.password) != "string") {this.data.password = ""}
