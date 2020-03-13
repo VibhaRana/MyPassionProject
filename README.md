@@ -1,4 +1,9 @@
 # MyPassionProject
 I am making this "OurApp" project which is of my personal intrest.
 <hr>
-Its like a  small twitter app with a chatting option. Its in progress.
+<h3>Technologies Used </h3>
+<ul>
+Full Stack Javascript
+Mongodb
+Web App Security for Password Hashing
+</ul>
