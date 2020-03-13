@@ -15,6 +15,7 @@
     "dotenv": "^8.2.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "express-session": "^1.17.0",
     "mongodb": "^3.5.5",
     "node": "^13.10.1",
     "nodemon": "^1.19.0",

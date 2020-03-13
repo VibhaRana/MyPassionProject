@@ -2,7 +2,7 @@ const User = require('../models/User')
 
 exports.login = function(req, res) {
   let user = new User(req.body)
-  //login will return the promise()
+  //login will return the promise(), also this is where we want to leaverage sessions
   user.login().then(function(result) {
     res.send(result)
   }).catch(function(e) {
