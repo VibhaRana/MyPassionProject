@@ -10,3 +10,6 @@ Mongodb
 Web App Security for Password Hashing
   <br>
 </ul>
+<br>
+<h2>Command used to run project - </h2>
+<h4>npm run watch
