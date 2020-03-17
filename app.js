@@ -1,6 +1,7 @@
 const express = require('express')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
+const flash = require('connect-flash')
 const app = express()
 
 //session package
@@ -14,6 +15,8 @@ let sessionOptions = session({
 })
 //tell express to use session
 app.use(sessionOptions)
+//use flash
+app.use(flash())
 
 const router = require('./router')
 
