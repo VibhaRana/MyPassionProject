@@ -4,24 +4,23 @@ const validator = require("validator")
 const md5 = require('md5')
 
 let User = function(data) {
-  this.data = data //storing user data
+  this.data = data
   this.errors = []
 }
-//using protype syntax, javascript will not need to create a copyof this function, once for each object
-//instead any object created from let User = function(){}constructor function will have access to this method
+
 User.prototype.cleanUp = function() {
-  //if the username is not the type of string, then empty it.
   if (typeof(this.data.username) != "string") {this.data.username = ""}
   if (typeof(this.data.email) != "string") {this.data.email = ""}
   if (typeof(this.data.password) != "string") {this.data.password = ""}
 
-  // get rid of any bogus properties, this way we are updating data property
+  // get rid of any bogus properties
   this.data = {
     username: this.data.username.trim().toLowerCase(),
     email: this.data.email.trim().toLowerCase(),
     password: this.data.password
   }
 }
+
 User.prototype.validate = function() {
   return new Promise(async (resolve, reject) => {
     if (this.data.username == "") {this.errors.push("You must provide a username.")}
@@ -85,13 +84,9 @@ User.prototype.register = function() {
     }
   })
 }
-  
 
-//gravatar used, and email is hashed so that it is not visible in browser, md5 pkg is used
-User.prototype.getAvatar = function(){
-  //user object will have property name avatar which stores a photo, now we just need to call getAvatar() at appropriate times. call this in login and register fnctn
+User.prototype.getAvatar = function() {
   this.avatar = `https://gravatar.com/avatar/${md5(this.data.email)}?s=128`
-
 }
 
 module.exports = User
