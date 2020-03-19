@@ -6,7 +6,7 @@ exports.viewCreateScreen = function(req, res){
 }
 exports.create = function(req, res) {
     //store the post of user in db, data management is done in Model
-    let post = new Post(req.body)        //req.body is blueprint which contains the form data which user submitted
+    let post = new Post(req.body, req.session.user._id)        //req.body is blueprint which contains the form data which user submitted
     //set a method create() to return a promise
     post.create().then(function(){
        res.send("Created")

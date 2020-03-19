@@ -1,8 +1,10 @@
 const postsCollection = require('../db').db().collection("posts")    //reusable file which stores db
-let Post = function(data){          //when postController uses this conctructor fnctn, remember we are passing along req.body which is going to be the form data user just submitted
+const ObjectID = require('mongodb').ObjectID
+let Post = function(data, userid){          //when postController uses this conctructor fnctn, remember we are passing along req.body which is going to be the form data user just submitted
     //receive data as parameter in function() and store data within property on our object, data here is incoming request of body data
      this.data = data
      this.errors = []
+     this.userid = userid
 }
 
 //lets create a method that any object created using Post blueprint will have access to
@@ -19,7 +21,9 @@ Post.prototype.cleanUp = function(){
 this.data = {
     title: this.data.title.trim(),
     body: this.data.body.trim(),
-    createdDate: new Date()
+    createdDate: new Date(),
+    author: this.userid
+
 }
 
 }
