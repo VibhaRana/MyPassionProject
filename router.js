@@ -11,6 +11,7 @@ router.post('/logout', userController.logout)
 //post related routes
 //only users who have a account can create a post, no guest user can. You should register first
 router.get('/create-post', userController.mustBeLoggedIn, postController.viewCreateScreen)
+router.post('/create-post', userController.mustBeLoggedIn, postController.create)
 
 module.exports = router
 //color for body background #ff4c68

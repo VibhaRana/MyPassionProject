@@ -18,6 +18,14 @@ app.use(sessionOptions)
 //use flash
 app.use(flash())
 
+//we are telling express to use this function at every request.
+    //before we are using this just before router, means this function will run first
+app.use(function(req, res, next){
+    //we are now working with an object that will be available within ejs. thats y use locals. 
+    res.locals.user = req.session.user
+    //we are calling next, so express will move on to run actual function for particular route
+    next()
+})
 const router = require('./router')
 
 app.use(express.urlencoded({extended: false})) //boiler plate code, no need to memorise
