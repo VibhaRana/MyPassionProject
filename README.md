@@ -15,5 +15,5 @@ Web App Security for Password Hashing
 <h4>npm run watch
   <hr>
   <h2>About</h2>
-  <h4>This project is for people who love to write and share them online. There is no word limits, so you can write without worrying about 
-  word limit. Web security is used so no one can see the email address of the user, and user password has been hashed which is one way encryption. So it cant be decrypted.
+  <h4>This project is for people who love to write and share the post  online. There is no word limits, so you can write without worrying 
+  about word limit People can chat and follow other follow. Web security is used so no one can see the email address of the user, and user password has been hashed which is one way encryption. So it cant be decrypted.
