@@ -61,7 +61,22 @@ Post.prototype.create = function(){
         }
 
     })
+    Post.findSingleById = function(id){
+        return new Promise(async function(resolve, reject){
+            if(typeof(id) != "string" || !ObjectID.isValid(id)) {
+                reject()
+                return
+            }
+            let post = await postsCollection.findOne({_id: new ObjectId(id)})
+            //if we successfully found a post, resolve that post
+            if(post){
+                resolve(post)
+            }else{
+                reject()
+            }
+        })
 
+    }
 }
 
 module.exports = Post
