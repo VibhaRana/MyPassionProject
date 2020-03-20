@@ -66,6 +66,17 @@ exports.ifUserExists = function(req, res, next){
  })
 }
 
+// exports.profilePostsScreen = function(req, res) {
+// res.render('profile', {
+//   //makeup any property names you want
+//   profileUsername: req.profileUseer.username,
+//   profileAvatar: req.profileUser.avatar
+// })
+// }
+
 exports.profilePostsScreen = function(req, res) {
-res.render('profile')
+  res.render('profile', {
+    profileUsername: req.profileUser.username,
+    profileAvatar: req.profileUser.avatar
+  })
 }
