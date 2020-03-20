@@ -8,6 +8,9 @@ router.post('/register', userController.register)
 router.post('/login', userController.login)
 router.post('/logout', userController.logout)
 
+//profile related routes
+router.get('/profile/:username', userController.ifUserExists, userController.profilePostsScreen)
+
 //post related routes
 //only users who have a account can create a post, no guest user can. You should register first
 router.get('/create-post', userController.mustBeLoggedIn, postController.viewCreateScreen)
