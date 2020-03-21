@@ -21,6 +21,9 @@ app.use(flash())
 //we are telling express to use this function at every request.
     //before we are using this just before router, means this function will run first
 app.use(function(req, res, next){
+    //make all error and success flash messages available from all templates
+    res.locals.errors = req.flash("errors")
+    res.locals.success = req.flash("success")
     //make current user id available on the req object
     if(req.session.user){
         req.visitorId = req.session.user._id
