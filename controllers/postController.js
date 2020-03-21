@@ -15,10 +15,20 @@ exports.create = function(req, res) {
 
 exports.viewSingle = async function(req, res) {
   try {
-    let post = await Post.findSingleById(req.params.id)
+    let post = await Post.findSingleById(req.params.id, req.visitorId)
     res.render('single-post-screen', {post: post})
   } catch {
     res.render('404')
+  }
+}
+exports.viewEditScreen = async function(req,res){
+  try{
+//1.Ask Post Model for data for relevant post, need existeng title and body content user could update or edit
+let post = await Post.findSingleById(req.params.id)
+//2.Render edit screen template
+res.render("edit-post", {post: post})
+  }catch{
+res.render("404")
   }
 }
 // //require model. This will be blueprint for creating post objects
