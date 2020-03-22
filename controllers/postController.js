@@ -24,19 +24,6 @@ exports.viewSingle = async function(req, res) {
   }
 }
 
-// exports.viewEditScreen = async function(req, res) {
-//   try {
-//     let post = await Post.findSingleById(req.params.id)
-//   if(post.authorId == req.visitorId){
-//     res.render("edit-post", {post: post})
-//   }else{
-//     req.flash("errors", "You do not have permission to perform that action")
-//     req.session.save(() => res.redirect("/"))
-//   }
-//   } catch {
-//     res.render("404")
-//   }
-// }
 
 exports.viewEditScreen = async function(req, res) {
   try {
@@ -88,5 +75,13 @@ exports.delete = function(req, res) {
   }).catch(() => {
     req.flash("errors", "You do not have permission to perform that action.")
     req.session.save(() => res.redirect("/"))
+  })
+}
+exports.search = function(req, res){
+  Post.search(req.body.searchTerm).then(posts => {
+//if promise is successfull and resolved, send raw json data to browser
+res.json(posts)
+  }).catch(() => {
+     res.json([])
   })
 }
