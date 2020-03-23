@@ -1,0 +1,27 @@
+<%- include('includes/header') %>
+
+ <style>
+   body{
+     background-image: url(https://png.pngtree.com/thumb_back/fh260/back_pic/04/04/74/76580b1b006939a.jpg);
+     
+    
+    }
+</style> 
+<!-- <%- include('includes/header') %> -->
+
+<div class="container py-md-5 container--narrow">
+
+  <%- include('includes/flash') %>
+  <%- include('includes/profileShared') %>
+
+  <div class="list-group">
+    <% following.forEach(function(followedUser) { %>
+      <a href="/profile/<%= followedUser.username %>" class="list-group-item list-group-item-action">
+        <img class="avatar-tiny" src="<%= followedUser.avatar %>">
+        <%= followedUser.username %>
+      </a>
+    <% }) %>
+  </div>
+</div>
+
+<%- include('includes/footer') %>
