@@ -4,7 +4,7 @@ body, .tooltip
 }
 
 .header-bar {
-  background-color: #292929;
+  background-color: black;
 }
 
 .container--narrow {
@@ -23,7 +23,7 @@ body, .tooltip
 }
 
 .avatar-small {
-  width: 32px;
+  width: 35px;
   height: 32px;
   border-radius: 16px;
   margin-right: 5px;
@@ -32,8 +32,8 @@ body, .tooltip
 }
 
 .avatar-tiny {
-  width: 24px;
-  height: 24px;
+  width: 34px;
+  height: 34px;
   border-radius: 12px;
   margin-right: 4px;
   position: relative;
