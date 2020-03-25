@@ -11,6 +11,7 @@ Web App Security for Password Hashing
   <br>
 </ul>
 <br>
+<h2>Deployed On- </h2> - <a href = "https://mysmalltwitter.herokuapp.com/">https://mysmalltwitter.herokuapp.com/</a>
 <h2>Command used to run project - </h2>
 <h4>npm run watch
   <hr>
